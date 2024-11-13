@@ -38,6 +38,25 @@ def create_member():
 
 
 
+
+
+
+@app.route('/members', methods=['PUT'])
+def edit_member():
+    new_menb = request.json
+    jackson_family.replace_member(new_menb)
+    return jsonify(jackson_family.get_all_members())
+
+
+
+
+
+
+
+
+
+
+
 @app.route('/members/<int:id>', methods=['PATCH'])
 def update_user(id):
     request_data = request.json                                                 # Get JSON data with updates

@@ -38,6 +38,18 @@ class FamilyStructure:
 
      
 
+    def replace_member(self, id, new_menb):
+        for y in self._members:
+            if y.get('id') == id:
+                y = new_menb
+
+
+
+
+
+
+
+
 
 
 
