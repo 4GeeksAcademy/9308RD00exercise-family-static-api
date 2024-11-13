@@ -19,17 +19,51 @@ class FamilyStructure:
     def _generateId(self):
         return randint(0, 99999999)
 
+
+
     def add_member(self, member):
         # fill this method and update the return
-        pass
+        member["id"] = self._generateId()
+        self._members.append(member)
+
+    
+    def update_member(self, id, update_data):
+        for memb in self._members:
+            if memb.get('id') == id:
+                for key, value in update_data.items():  
+                    memb[key] = value             
+                return memb                      
+        return None 
+                
+
+     
+
+
+
+
 
     def delete_member(self, id):
         # fill this method and update the return
-        pass
+        for x in range(len(self._members)):
+            if self._members[x]["id"] == id:       
+                self._members.pop(x)
+
+
+
+
+
+
+    
 
     def get_member(self, id):
         # fill this method and update the return
-        pass
+        for i in range(len(self._members)):
+            if self._members[i]["id"] == id:       
+                return self._members[i] 
+
+
+
+
 
     # this method is done, it returns a list with all the family members
     def get_all_members(self):
